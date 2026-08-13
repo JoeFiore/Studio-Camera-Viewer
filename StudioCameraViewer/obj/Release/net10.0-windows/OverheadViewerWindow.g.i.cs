@@ -69,7 +69,7 @@ namespace StudioCameraViewer {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/StudioCameraViewer;V1.0.0.0;component/overheadviewerwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/StudioCameraViewer;component/overheadviewerwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\OverheadViewerWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

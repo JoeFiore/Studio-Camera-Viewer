@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("StudioCameraViewer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e51a1086b79f3e1b441bd856042b9f6b5a51e48f")]
 [assembly: System.Reflection.AssemblyProductAttribute("StudioCameraViewer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("StudioCameraViewer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

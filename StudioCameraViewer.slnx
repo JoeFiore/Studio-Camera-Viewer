@@ -1,3 +1,9 @@
 <Solution>
+  <Project Path="Studio Camera Viewer (TESTING)/Studio Camera Viewer (TESTING).vdproj" Type="Installer">
+    <Build />
+  </Project>
+  <Project Path="Studio Camera Viewer/Studio Camera Viewer.vdproj" Type="Installer">
+    <Build />
+  </Project>
   <Project Path="StudioCameraViewer/StudioCameraViewer.csproj" />
 </Solution>

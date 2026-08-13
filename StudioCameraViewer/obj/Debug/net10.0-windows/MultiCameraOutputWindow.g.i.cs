@@ -77,7 +77,7 @@ namespace StudioCameraViewer {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/StudioCameraViewer;component/multicameraoutputwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/StudioCameraViewer;V1.0.0.0;component/multicameraoutputwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\MultiCameraOutputWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

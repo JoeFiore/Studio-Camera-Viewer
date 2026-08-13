@@ -115,11 +115,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\joe\\source\\repos\\StudioCameraViewer\\StudioCameraViewer\\StudioCameraViewer.csproj",
+      "projectUniqueName": "C:\\Users\\joe\\source\\repos\\StudioCameraViewer\\Studio Camera Viewer\\StudioCameraViewer\\StudioCameraViewer.csproj",
       "projectName": "StudioCameraViewer",
-      "projectPath": "C:\\Users\\joe\\source\\repos\\StudioCameraViewer\\StudioCameraViewer\\StudioCameraViewer.csproj",
+      "projectPath": "C:\\Users\\joe\\source\\repos\\StudioCameraViewer\\Studio Camera Viewer\\StudioCameraViewer\\StudioCameraViewer.csproj",
       "packagesPath": "C:\\Users\\joe\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\joe\\source\\repos\\StudioCameraViewer\\StudioCameraViewer\\obj\\publish\\win-x64\\",
+      "outputPath": "C:\\Users\\joe\\source\\repos\\StudioCameraViewer\\Studio Camera Viewer\\StudioCameraViewer\\obj\\publish\\win-x64\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\joe\\AppData\\Roaming\\NuGet\\NuGet.Config",

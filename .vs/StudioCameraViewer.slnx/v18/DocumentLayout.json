@@ -1,37 +1,42 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\joe\\source\\repos\\StudioCameraViewer\\",
+  "WorkspaceRootPath": "C:\\Users\\joe\\source\\repos\\StudioCameraViewer\\Studio Camera Viewer\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{34D59C90-A29C-F736-C5D6-62C7CE7E7A95}|StudioCameraViewer\\StudioCameraViewer.csproj|c:\\users\\joe\\source\\repos\\studiocameraviewer\\studiocameraviewer\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{34D59C90-A29C-F736-C5D6-62C7CE7E7A95}|StudioCameraViewer\\StudioCameraViewer.csproj|c:\\users\\joe\\source\\repos\\studiocameraviewer\\studio camera viewer\\studiocameraviewer\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{34D59C90-A29C-F736-C5D6-62C7CE7E7A95}|StudioCameraViewer\\StudioCameraViewer.csproj|solutionrelative:studiocameraviewer\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{34D59C90-A29C-F736-C5D6-62C7CE7E7A95}|StudioCameraViewer\\StudioCameraViewer.csproj|c:\\users\\joe\\source\\repos\\studiocameraviewer\\studiocameraviewer\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{34D59C90-A29C-F736-C5D6-62C7CE7E7A95}|StudioCameraViewer\\StudioCameraViewer.csproj|solutionrelative:studiocameraviewer\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\joe\\.copilot\\plans\\plan-redesign-multi-camera-mode-as-dashboard-tab-feature.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|MarkdownSecurePreview"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{34D59C90-A29C-F736-C5D6-62C7CE7E7A95}|StudioCameraViewer\\StudioCameraViewer.csproj|c:\\users\\joe\\source\\repos\\studiocameraviewer\\studiocameraviewer\\multicameraoutputwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{34D59C90-A29C-F736-C5D6-62C7CE7E7A95}|StudioCameraViewer\\StudioCameraViewer.csproj|solutionrelative:studiocameraviewer\\multicameraoutputwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{34D59C90-A29C-F736-C5D6-62C7CE7E7A95}|StudioCameraViewer\\StudioCameraViewer.csproj|c:\\users\\joe\\source\\repos\\studiocameraviewer\\studiocameraviewer\\studiocameraviewer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{34D59C90-A29C-F736-C5D6-62C7CE7E7A95}|StudioCameraViewer\\StudioCameraViewer.csproj|c:\\users\\joe\\source\\repos\\studiocameraviewer\\studio camera viewer\\studiocameraviewer\\studiocameraviewer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{34D59C90-A29C-F736-C5D6-62C7CE7E7A95}|StudioCameraViewer\\StudioCameraViewer.csproj|solutionrelative:studiocameraviewer\\studiocameraviewer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{34D59C90-A29C-F736-C5D6-62C7CE7E7A95}|StudioCameraViewer\\StudioCameraViewer.csproj|c:\\users\\joe\\source\\repos\\studiocameraviewer\\studiocameraviewer\\overheadviewerwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34D59C90-A29C-F736-C5D6-62C7CE7E7A95}|StudioCameraViewer\\StudioCameraViewer.csproj|solutionrelative:studiocameraviewer\\overheadviewerwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{34D59C90-A29C-F736-C5D6-62C7CE7E7A95}|StudioCameraViewer\\StudioCameraViewer.csproj|c:\\users\\joe\\source\\repos\\studiocameraviewer\\studio camera viewer\\studiocameraviewer\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{34D59C90-A29C-F736-C5D6-62C7CE7E7A95}|StudioCameraViewer\\StudioCameraViewer.csproj|solutionrelative:studiocameraviewer\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{34D59C90-A29C-F736-C5D6-62C7CE7E7A95}|StudioCameraViewer\\StudioCameraViewer.csproj|c:\\users\\joe\\source\\repos\\studiocameraviewer\\studiocameraviewer\\overheadviewerwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{34D59C90-A29C-F736-C5D6-62C7CE7E7A95}|StudioCameraViewer\\StudioCameraViewer.csproj|c:\\users\\joe\\source\\repos\\studiocameraviewer\\studio camera viewer\\studiocameraviewer\\multicamwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{34D59C90-A29C-F736-C5D6-62C7CE7E7A95}|StudioCameraViewer\\StudioCameraViewer.csproj|solutionrelative:studiocameraviewer\\multicamwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34D59C90-A29C-F736-C5D6-62C7CE7E7A95}|StudioCameraViewer\\StudioCameraViewer.csproj|c:\\users\\joe\\source\\repos\\studiocameraviewer\\studio camera viewer\\studiocameraviewer\\multicamwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34D59C90-A29C-F736-C5D6-62C7CE7E7A95}|StudioCameraViewer\\StudioCameraViewer.csproj|solutionrelative:studiocameraviewer\\multicamwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34D59C90-A29C-F736-C5D6-62C7CE7E7A95}|StudioCameraViewer\\StudioCameraViewer.csproj|c:\\users\\joe\\source\\repos\\studiocameraviewer\\studio camera viewer\\studiocameraviewer\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34D59C90-A29C-F736-C5D6-62C7CE7E7A95}|StudioCameraViewer\\StudioCameraViewer.csproj|solutionrelative:studiocameraviewer\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34D59C90-A29C-F736-C5D6-62C7CE7E7A95}|StudioCameraViewer\\StudioCameraViewer.csproj|c:\\users\\joe\\source\\repos\\studiocameraviewer\\studio camera viewer\\studiocameraviewer\\overheadviewerwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{34D59C90-A29C-F736-C5D6-62C7CE7E7A95}|StudioCameraViewer\\StudioCameraViewer.csproj|solutionrelative:studiocameraviewer\\overheadviewerwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{34D59C90-A29C-F736-C5D6-62C7CE7E7A95}|StudioCameraViewer\\StudioCameraViewer.csproj|c:\\users\\joe\\source\\repos\\studiocameraviewer\\studiocameraviewer\\multicameraoutputwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34D59C90-A29C-F736-C5D6-62C7CE7E7A95}|StudioCameraViewer\\StudioCameraViewer.csproj|solutionrelative:studiocameraviewer\\multicameraoutputwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{34D59C90-A29C-F736-C5D6-62C7CE7E7A95}|StudioCameraViewer\\StudioCameraViewer.csproj|c:\\users\\joe\\source\\repos\\studiocameraviewer\\studio camera viewer\\studiocameraviewer\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{34D59C90-A29C-F736-C5D6-62C7CE7E7A95}|StudioCameraViewer\\StudioCameraViewer.csproj|solutionrelative:studiocameraviewer\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34D59C90-A29C-F736-C5D6-62C7CE7E7A95}|StudioCameraViewer\\StudioCameraViewer.csproj|c:\\users\\joe\\source\\repos\\studiocameraviewer\\studio camera viewer\\studiocameraviewer\\overheadviewerwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34D59C90-A29C-F736-C5D6-62C7CE7E7A95}|StudioCameraViewer\\StudioCameraViewer.csproj|solutionrelative:studiocameraviewer\\overheadviewerwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -41,75 +46,92 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "OverheadViewerWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\joe\\source\\repos\\StudioCameraViewer\\StudioCameraViewer\\OverheadViewerWindow.xaml.cs",
-              "RelativeDocumentMoniker": "StudioCameraViewer\\OverheadViewerWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\joe\\source\\repos\\StudioCameraViewer\\StudioCameraViewer\\OverheadViewerWindow.xaml.cs",
-              "RelativeToolTip": "StudioCameraViewer\\OverheadViewerWindow.xaml.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAqwCkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-13T00:39:33.395Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "OverheadViewerWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\joe\\source\\repos\\StudioCameraViewer\\StudioCameraViewer\\OverheadViewerWindow.xaml",
-              "RelativeDocumentMoniker": "StudioCameraViewer\\OverheadViewerWindow.xaml",
-              "ToolTip": "C:\\Users\\joe\\source\\repos\\StudioCameraViewer\\StudioCameraViewer\\OverheadViewerWindow.xaml",
-              "RelativeToolTip": "StudioCameraViewer\\OverheadViewerWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-08-13T00:39:24.253Z"
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d455e273-1acb-491f-b5c9-760a99044cf9}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\joe\\source\\repos\\StudioCameraViewer\\StudioCameraViewer\\MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\joe\\source\\repos\\StudioCameraViewer\\Studio Camera Viewer\\StudioCameraViewer\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "StudioCameraViewer\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\joe\\source\\repos\\StudioCameraViewer\\StudioCameraViewer\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\joe\\source\\repos\\StudioCameraViewer\\Studio Camera Viewer\\StudioCameraViewer\\MainWindow.xaml.cs",
               "RelativeToolTip": "StudioCameraViewer\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAEwBMAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-13T00:35:35.656Z",
+              "WhenOpened": "2026-08-13T00:32:20.433Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "plan-redesign-multi-camera-mode-as-dashboard-tab-feature.md [Preview]",
-              "DocumentMoniker": "C:\\Users\\joe\\.copilot\\plans\\plan-redesign-multi-camera-mode-as-dashboard-tab-feature.md",
-              "RelativeDocumentMoniker": "..\\..\\..\\.copilot\\plans\\plan-redesign-multi-camera-mode-as-dashboard-tab-feature.md",
-              "ToolTip": "C:\\Users\\joe\\.copilot\\plans\\plan-redesign-multi-camera-mode-as-dashboard-tab-feature.md [Preview]",
-              "RelativeToolTip": "..\\..\\..\\.copilot\\plans\\plan-redesign-multi-camera-mode-as-dashboard-tab-feature.md [Preview]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2026-08-12T23:49:02.902Z",
-              "EditorCaption": " [Preview]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\joe\\source\\repos\\StudioCameraViewer\\StudioCameraViewer\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "StudioCameraViewer\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\joe\\source\\repos\\StudioCameraViewer\\StudioCameraViewer\\MainWindow.xaml",
-              "RelativeToolTip": "StudioCameraViewer\\MainWindow.xaml",
+              "DocumentIndex": 3,
+              "Title": "MultiCamWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\joe\\source\\repos\\StudioCameraViewer\\Studio Camera Viewer\\StudioCameraViewer\\MultiCamWindow.xaml",
+              "RelativeDocumentMoniker": "StudioCameraViewer\\MultiCamWindow.xaml",
+              "ToolTip": "C:\\Users\\joe\\source\\repos\\StudioCameraViewer\\Studio Camera Viewer\\StudioCameraViewer\\MultiCamWindow.xaml",
+              "RelativeToolTip": "StudioCameraViewer\\MultiCamWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-08-13T00:35:38.632Z",
+              "WhenOpened": "2026-08-13T00:33:21.141Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "MultiCamWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\joe\\source\\repos\\StudioCameraViewer\\Studio Camera Viewer\\StudioCameraViewer\\MultiCamWindow.xaml.cs",
+              "RelativeDocumentMoniker": "StudioCameraViewer\\MultiCamWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\joe\\source\\repos\\StudioCameraViewer\\Studio Camera Viewer\\StudioCameraViewer\\MultiCamWindow.xaml.cs",
+              "RelativeToolTip": "StudioCameraViewer\\MultiCamWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-13T00:46:40.199Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "OverheadViewerWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\joe\\source\\repos\\StudioCameraViewer\\Studio Camera Viewer\\StudioCameraViewer\\OverheadViewerWindow.xaml",
+              "RelativeDocumentMoniker": "StudioCameraViewer\\OverheadViewerWindow.xaml",
+              "ToolTip": "C:\\Users\\joe\\source\\repos\\StudioCameraViewer\\Studio Camera Viewer\\StudioCameraViewer\\OverheadViewerWindow.xaml",
+              "RelativeToolTip": "StudioCameraViewer\\OverheadViewerWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-08-13T00:39:24.253Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\joe\\source\\repos\\StudioCameraViewer\\Studio Camera Viewer\\StudioCameraViewer\\App.xaml",
+              "RelativeDocumentMoniker": "StudioCameraViewer\\App.xaml",
+              "ToolTip": "C:\\Users\\joe\\source\\repos\\StudioCameraViewer\\Studio Camera Viewer\\StudioCameraViewer\\App.xaml",
+              "RelativeToolTip": "StudioCameraViewer\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-08-13T00:29:00.211Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\joe\\source\\repos\\StudioCameraViewer\\Studio Camera Viewer\\StudioCameraViewer\\App.xaml.cs",
+              "RelativeDocumentMoniker": "StudioCameraViewer\\App.xaml.cs",
+              "ToolTip": "C:\\Users\\joe\\source\\repos\\StudioCameraViewer\\Studio Camera Viewer\\StudioCameraViewer\\App.xaml.cs",
+              "RelativeToolTip": "StudioCameraViewer\\App.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-13T00:29:06.512Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "StudioCameraViewer.csproj",
-              "DocumentMoniker": "C:\\Users\\joe\\source\\repos\\StudioCameraViewer\\StudioCameraViewer\\StudioCameraViewer.csproj",
+              "DocumentMoniker": "C:\\Users\\joe\\source\\repos\\StudioCameraViewer\\Studio Camera Viewer\\StudioCameraViewer\\StudioCameraViewer.csproj",
               "RelativeDocumentMoniker": "StudioCameraViewer\\StudioCameraViewer.csproj",
-              "ToolTip": "C:\\Users\\joe\\source\\repos\\StudioCameraViewer\\StudioCameraViewer\\StudioCameraViewer.csproj",
+              "ToolTip": "C:\\Users\\joe\\source\\repos\\StudioCameraViewer\\Studio Camera Viewer\\StudioCameraViewer\\StudioCameraViewer.csproj",
               "RelativeToolTip": "StudioCameraViewer\\StudioCameraViewer.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
@@ -118,27 +140,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MultiCameraOutputWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\joe\\source\\repos\\StudioCameraViewer\\StudioCameraViewer\\MultiCameraOutputWindow.xaml",
-              "RelativeDocumentMoniker": "StudioCameraViewer\\MultiCameraOutputWindow.xaml",
-              "ToolTip": "C:\\Users\\joe\\source\\repos\\StudioCameraViewer\\StudioCameraViewer\\MultiCameraOutputWindow.xaml",
-              "RelativeToolTip": "StudioCameraViewer\\MultiCameraOutputWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-08-12T23:46:52.014Z",
-              "EditorCaption": ""
+              "DocumentIndex": 8,
+              "Title": "OverheadViewerWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\joe\\source\\repos\\StudioCameraViewer\\Studio Camera Viewer\\StudioCameraViewer\\OverheadViewerWindow.xaml.cs",
+              "RelativeDocumentMoniker": "StudioCameraViewer\\OverheadViewerWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\joe\\source\\repos\\StudioCameraViewer\\Studio Camera Viewer\\StudioCameraViewer\\OverheadViewerWindow.xaml.cs",
+              "RelativeToolTip": "StudioCameraViewer\\OverheadViewerWindow.xaml.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAqwCkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-13T00:39:33.395Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "MultiCameraOutputWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\joe\\source\\repos\\StudioCameraViewer\\StudioCameraViewer\\MultiCameraOutputWindow.xaml.cs",
-              "RelativeDocumentMoniker": "StudioCameraViewer\\MultiCameraOutputWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\joe\\source\\repos\\StudioCameraViewer\\StudioCameraViewer\\MultiCameraOutputWindow.xaml.cs",
-              "RelativeToolTip": "StudioCameraViewer\\MultiCameraOutputWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAL8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-12T23:47:15.25Z",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\joe\\source\\repos\\StudioCameraViewer\\Studio Camera Viewer\\StudioCameraViewer\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "StudioCameraViewer\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\joe\\source\\repos\\StudioCameraViewer\\Studio Camera Viewer\\StudioCameraViewer\\MainWindow.xaml",
+              "RelativeToolTip": "StudioCameraViewer\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-08-13T01:26:53.794Z",
               "EditorCaption": ""
             }
           ]
