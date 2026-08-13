@@ -1,0 +1,119 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Windows;
+using System.Windows.Media.Animation;
+using KeyEventArgs = System.Windows.Input.KeyEventArgs;
+using Key = System.Windows.Input.Key;
+
+namespace StudioCameraViewer
+{
+    public partial class MultiCameraOutputWindow : Window
+    {
+        private List<string>? _selectedCameras;
+        private int _layoutMode; // 0 = 4-camera, 1 = 2-camera
+
+        public MultiCameraOutputWindow(List<string>? selectedCameras, int layoutMode = 0)
+        {
+            InitializeComponent();
+            _selectedCameras = selectedCameras ?? new List<string>();
+            _layoutMode = layoutMode;
+
+            SetupLayout();
+            UpdateCameraLabels();
+        }
+
+        private void SetupLayout()
+        {
+            if (_layoutMode == 0) // 4-camera mode
+            {
+                GridLayout4.Visibility = Visibility.Visible;
+                GridLayout2.Visibility = Visibility.Collapsed;
+            }
+            else // 2-camera mode
+            {
+                GridLayout4.Visibility = Visibility.Collapsed;
+                GridLayout2.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void UpdateCameraLabels()
+        {
+            if (_layoutMode == 0) // 4-camera
+            {
+                // Camera 1
+                TxtCamera1.Text = _selectedCameras.Count > 0 ? _selectedCameras[0] : "No Feed";
+                TxtCamera1.Opacity = _selectedCameras.Count > 0 ? 0 : 1;
+
+                // Camera 2
+                TxtCamera2.Text = _selectedCameras.Count > 1 ? _selectedCameras[1] : "No Feed";
+                TxtCamera2.Opacity = _selectedCameras.Count > 1 ? 0 : 1;
+
+                // Camera 3
+                TxtCamera3.Text = _selectedCameras.Count > 2 ? _selectedCameras[2] : "No Feed";
+                TxtCamera3.Opacity = _selectedCameras.Count > 2 ? 0 : 1;
+
+                // Camera 4
+                TxtCamera4.Text = _selectedCameras.Count > 3 ? _selectedCameras[3] : "No Feed";
+                TxtCamera4.Opacity = _selectedCameras.Count > 3 ? 0 : 1;
+            }
+            else // 2-camera
+            {
+                // Camera 1
+                TxtCamera1_2View.Text = _selectedCameras.Count > 0 ? _selectedCameras[0] : "No Feed";
+                TxtCamera1_2View.Opacity = _selectedCameras.Count > 0 ? 0 : 1;
+
+                // Camera 2
+                TxtCamera2_2View.Text = _selectedCameras.Count > 1 ? _selectedCameras[1] : "No Feed";
+                TxtCamera2_2View.Opacity = _selectedCameras.Count > 1 ? 0 : 1;
+            }
+
+            // Update status overlay
+            bool hasFeeds = _selectedCameras.Count > 0;
+            TxtStatusOverlay.Visibility = hasFeeds ? Visibility.Hidden : Visibility.Visible;
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            // Optional: Add a fade-out animation for the status text after 3 seconds
+            if (TxtStatusOverlay.Visibility == Visibility.Visible)
+            {
+                DoubleAnimation fadeAnimation = new DoubleAnimation
+                {
+                    From = 1.0,
+                    To = 0.0,
+                    BeginTime = TimeSpan.FromSeconds(3),
+                    Duration = TimeSpan.FromSeconds(1)
+                };
+                TxtStatusOverlay.BeginAnimation(UIElement.OpacityProperty, fadeAnimation);
+            }
+        }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Press ESC to close and return to control panel
+            if (e.Key == Key.Escape)
+            {
+                this.Close();
+            }
+        }
+
+        /// <summary>
+        /// Switch between 2-camera and 4-camera layouts
+        /// </summary>
+        public void SwitchLayout(int newLayoutMode)
+        {
+            _layoutMode = newLayoutMode;
+            SetupLayout();
+            UpdateCameraLabels();
+        }
+
+        /// <summary>
+        /// Update the displayed cameras
+        /// </summary>
+        public void UpdateCameras(List<string>? newCameras)
+        {
+            _selectedCameras = newCameras ?? new List<string>();
+            UpdateCameraLabels();
+        }
+    }
+}

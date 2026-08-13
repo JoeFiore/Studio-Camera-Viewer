@@ -1,0 +1,365 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text.Json;
+using System.Threading.Tasks;
+using System.Windows;
+using Application = System.Windows.Application;
+using Screen = System.Windows.Forms.Screen;
+
+namespace StudioCameraViewer
+{
+    public partial class MainWindow : Window
+    {
+        private List<string> _discoveredNdiSources = new List<string>();
+        private List<OverheadViewerWindow> _activeViewerWindows = new List<OverheadViewerWindow>();
+        private MultiCameraOutputWindow? _activeOutputWindow;
+
+        public MainWindow()
+        {
+            InitializeComponent();
+            LoadDisplays();
+            ScanNdiFeeds();
+        }
+
+        private void LoadDisplays()
+        {
+            CmbDisplay1.Items.Clear();
+            CmbDisplay2.Items.Clear();
+
+            int index = 1;
+            foreach (var screen in Screen.AllScreens)
+            {
+                string displayLabel = $"Display {index} ({screen.Bounds.Width}x{screen.Bounds.Height}) {(screen.Primary ? "[Primary]" : "")}";
+                CmbDisplay1.Items.Add(displayLabel);
+                CmbDisplay2.Items.Add(displayLabel);
+                index++;
+            }
+
+            if (CmbDisplay1.Items.Count > 1) CmbDisplay1.SelectedIndex = 1;
+            if (CmbDisplay2.Items.Count > 2) CmbDisplay2.SelectedIndex = 2;
+            else if (CmbDisplay2.Items.Count > 0) CmbDisplay2.SelectedIndex = 0;
+        }
+
+        private void ScanNdiFeeds()
+        {
+            CmbCamera1.Items.Clear();
+            CmbCamera2.Items.Clear();
+
+            // Also populate multi-camera combo boxes
+            if (CmbMultiCamera1 != null) CmbMultiCamera1.Items.Clear();
+            if (CmbMultiCamera2 != null) CmbMultiCamera2.Items.Clear();
+            if (CmbMultiCamera3 != null) CmbMultiCamera3.Items.Clear();
+            if (CmbMultiCamera4 != null) CmbMultiCamera4.Items.Clear();
+
+            _discoveredNdiSources.Clear();
+
+            // Simulated test feeds for off-network development
+            _discoveredNdiSources.Add("vMix - Camera 1 (TEST)");
+            _discoveredNdiSources.Add("vMix - Camera 2 (TEST)");
+
+            if (_discoveredNdiSources.Count == 0)
+            {
+                BannerWarning.Visibility = Visibility.Visible;
+                TxtWarning.Text = "No active vMix NDI feeds found. Check the 'Camera Setup' tab for instructions.";
+                CmbCamera1.Items.Add("No Feeds Detected");
+                CmbCamera2.Items.Add("No Feeds Detected");
+            }
+            else
+            {
+                BannerWarning.Visibility = Visibility.Collapsed;
+                foreach (var src in _discoveredNdiSources)
+                {
+                    CmbCamera1.Items.Add(src);
+                    CmbCamera2.Items.Add(src);
+
+                    // Add to multi-camera combos too
+                    if (CmbMultiCamera1 != null) CmbMultiCamera1.Items.Add(src);
+                    if (CmbMultiCamera2 != null) CmbMultiCamera2.Items.Add(src);
+                    if (CmbMultiCamera3 != null) CmbMultiCamera3.Items.Add(src);
+                    if (CmbMultiCamera4 != null) CmbMultiCamera4.Items.Add(src);
+                }
+                CmbCamera1.SelectedIndex = 0;
+                if (_discoveredNdiSources.Count > 1) CmbCamera2.SelectedIndex = 1;
+            }
+        }
+
+        private void BtnRefresh_Click(object sender, RoutedEventArgs e)
+        {
+            ScanNdiFeeds();
+        }
+
+        private async void BtnSaveDefaults_Click(object sender, RoutedEventArgs e)
+        {
+            // WPF uses 'IsEnabled', not 'Enabled'
+            BtnSaveDefaults.IsEnabled = false;
+
+            try
+            {
+                // 1. Get the AppData folder path
+                string appDataPath = System.IO.Path.Combine(
+                    Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+                    "OnTheProwl"
+                );
+
+                System.IO.Directory.CreateDirectory(appDataPath);
+                string filePath = System.IO.Path.Combine(appDataPath, "preset.json");
+
+                // 2. Gather your actual UI values here (replace drop-down names if different)
+                var settingsToSave = new
+                {
+                    MonitorA_Display = CmbDisplay1?.SelectedItem?.ToString(),
+                    MonitorA_Stream = CmbCamera1?.SelectedItem?.ToString(),
+                    MonitorB_Display = CmbDisplay2?.SelectedItem?.ToString(),
+                    MonitorB_Stream = CmbCamera2?.SelectedItem?.ToString()
+                };
+
+                // 3. Save asynchronously using System.Text.Json with proper error handling
+                await Task.Run(() =>
+                {
+                    try
+                    {
+                        string json = System.Text.Json.JsonSerializer.Serialize(settingsToSave);
+                        System.IO.File.WriteAllText(filePath, json);
+                    }
+                    catch (Exception innerEx)
+                    {
+                        // Log to file for debugging Release builds
+                        string logPath = System.IO.Path.Combine(appDataPath, "error.log");
+                        string logMessage = $"[{DateTime.Now:yyyy-MM-dd HH:mm:ss}] Error saving preset: {innerEx}";
+                        System.IO.File.AppendAllText(logPath, logMessage + Environment.NewLine);
+                        throw;
+                    }
+                });
+
+                System.Windows.MessageBox.Show("Preset saved successfully!");
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show($"Failed to save preset: {ex.Message}");
+            }
+            finally
+            {
+                BtnSaveDefaults.IsEnabled = true;
+            }
+        }
+
+        private void BtnStart_Click(object sender, RoutedEventArgs e)
+        {
+            CloseActiveOverheads();
+
+            int display1Idx = CmbDisplay1.SelectedIndex;
+            int display2Idx = CmbDisplay2.SelectedIndex;
+
+            if (display1Idx >= 0 && display1Idx < Screen.AllScreens.Length)
+            {
+                LaunchOverheadWindow(Screen.AllScreens[display1Idx], CmbCamera1.SelectedItem?.ToString());
+            }
+
+            if (display2Idx >= 0 && display2Idx < Screen.AllScreens.Length)
+            {
+                LaunchOverheadWindow(Screen.AllScreens[display2Idx], CmbCamera2.SelectedItem?.ToString());
+            }
+
+            // Launch multi-camera output if enabled
+            if (ChkMultiCamMode?.IsChecked == true)
+            {
+                LaunchMultiCameraOutput();
+            }
+
+            // Hide the Control Panel once windows are launched
+            if (_activeViewerWindows.Count > 0 || _activeOutputWindow != null)
+            {
+                this.Hide();
+            }
+        }
+
+        private void LaunchMultiCameraOutput()
+        {
+            // Close existing output window if any
+            CloseActiveOutputWindow();
+
+            // Gather selected cameras
+            List<string> selectedCameras = new List<string>();
+            if (CmbMultiCamera1?.SelectedItem != null) selectedCameras.Add(CmbMultiCamera1.SelectedItem.ToString() ?? "");
+            if (CmbMultiCamera2?.SelectedItem != null) selectedCameras.Add(CmbMultiCamera2.SelectedItem.ToString() ?? "");
+            if (CmbMultiCamera3?.SelectedItem != null) selectedCameras.Add(CmbMultiCamera3.SelectedItem.ToString() ?? "");
+            if (CmbMultiCamera4?.SelectedItem != null) selectedCameras.Add(CmbMultiCamera4.SelectedItem.ToString() ?? "");
+
+            // Filter out empty selections
+            selectedCameras.RemoveAll(s => string.IsNullOrEmpty(s));
+
+            if (selectedCameras.Count == 0)
+            {
+                System.Windows.MessageBox.Show("Please select at least one camera for multi-camera mode.");
+                return;
+            }
+
+            // Get target display
+            int displayIdx = CmbMultiCamDisplay?.SelectedIndex ?? 0;
+            if (displayIdx < 0 || displayIdx >= Screen.AllScreens.Length) displayIdx = 0;
+
+            Screen targetScreen = Screen.AllScreens[displayIdx];
+
+            // Create and launch output window
+            _activeOutputWindow = new MultiCameraOutputWindow(selectedCameras);
+            _activeOutputWindow.WindowStartupLocation = WindowStartupLocation.Manual;
+            _activeOutputWindow.WindowState = WindowState.Normal;
+
+            _activeOutputWindow.Left = targetScreen.Bounds.Left;
+            _activeOutputWindow.Top = targetScreen.Bounds.Top;
+            _activeOutputWindow.Width = targetScreen.Bounds.Width;
+            _activeOutputWindow.Height = targetScreen.Bounds.Height;
+
+            // Handle window close
+            _activeOutputWindow.Closed += (s, closedArgs) =>
+            {
+                _activeOutputWindow = null;
+            };
+
+            _activeOutputWindow.Show();
+            _activeOutputWindow.WindowState = WindowState.Maximized;
+        }
+
+        private void LaunchOverheadWindow(Screen targetScreen, string? cameraName)
+        {
+            var viewer = new OverheadViewerWindow(cameraName ?? "vMix Camera");
+
+            viewer.WindowStartupLocation = WindowStartupLocation.Manual;
+            viewer.WindowState = WindowState.Normal;
+
+            viewer.Left = targetScreen.Bounds.Left;
+            viewer.Top = targetScreen.Bounds.Top;
+            viewer.Width = targetScreen.Bounds.Width;
+            viewer.Height = targetScreen.Bounds.Height;
+
+            // Show the Control Panel again when all viewer windows are closed
+            viewer.Closed += (s, e) =>
+            {
+                _activeViewerWindows.Remove(viewer);
+                if (_activeViewerWindows.Count == 0)
+                {
+                    this.Show();
+                    this.WindowState = WindowState.Normal;
+                    this.Activate();
+                }
+            };
+
+            viewer.Show();
+            viewer.WindowState = WindowState.Maximized;
+
+            _activeViewerWindows.Add(viewer);
+        }
+
+        private void CloseActiveOverheads()
+        {
+            foreach (var win in _activeViewerWindows)
+            {
+                win.Close();
+            }
+            _activeViewerWindows.Clear();
+        }
+
+        private void CloseActiveOutputWindow()
+        {
+            if (_activeOutputWindow != null)
+            {
+                try
+                {
+                    _activeOutputWindow.Close();
+                }
+                catch { }
+                finally
+                {
+                    _activeOutputWindow = null;
+                }
+            }
+        }
+
+        private void RadioLayout_Changed(object sender, RoutedEventArgs e)
+        {
+            // Layout selection changed
+            if (_activeOutputWindow != null)
+            {
+                int layoutMode = (Radio4Camera?.IsChecked == true) ? 0 : 1;
+                _activeOutputWindow.SwitchLayout(layoutMode);
+            }
+        }
+
+        private void BtnLaunchOutput_Click(object sender, RoutedEventArgs e)
+        {
+            // Check if output window already exists
+            if (_activeOutputWindow != null)
+            {
+                try
+                {
+                    _activeOutputWindow.Activate();
+                    return;
+                }
+                catch
+                {
+                    // Window might be closed, clear reference
+                    _activeOutputWindow = null;
+                }
+            }
+
+            // Populate output display combo if not already done
+            if (CmbOutputDisplay != null && CmbOutputDisplay.Items.Count == 0)
+            {
+                int index = 1;
+                foreach (var screen in Screen.AllScreens)
+                {
+                    string displayLabel = $"Display {index} ({screen.Bounds.Width}x{screen.Bounds.Height}) {(screen.Primary ? "[Primary]" : "")}";
+                    CmbOutputDisplay.Items.Add(displayLabel);
+                    index++;
+                }
+                if (CmbOutputDisplay.Items.Count > 0) CmbOutputDisplay.SelectedIndex = 0;
+            }
+
+            // Get layout mode
+            int layoutMode = (Radio4Camera?.IsChecked == true) ? 0 : 1;
+
+            // Get selected cameras
+            List<string> selectedCameras = new List<string>();
+
+            // For now, add the available cameras based on layout mode
+            if (layoutMode == 0) // 4-camera mode
+            {
+                if (_discoveredNdiSources.Count > 0) selectedCameras.Add(_discoveredNdiSources[0]);
+                if (_discoveredNdiSources.Count > 1) selectedCameras.Add(_discoveredNdiSources[1]);
+                if (_discoveredNdiSources.Count > 0) selectedCameras.Add(_discoveredNdiSources[0]);
+                if (_discoveredNdiSources.Count > 1) selectedCameras.Add(_discoveredNdiSources[1]);
+            }
+            else // 2-camera mode
+            {
+                if (_discoveredNdiSources.Count > 0) selectedCameras.Add(_discoveredNdiSources[0]);
+                if (_discoveredNdiSources.Count > 1) selectedCameras.Add(_discoveredNdiSources[1]);
+            }
+
+            // Get target display
+            int displayIdx = CmbOutputDisplay != null ? CmbOutputDisplay.SelectedIndex : 0;
+            if (displayIdx < 0 || displayIdx >= Screen.AllScreens.Length) displayIdx = 0;
+
+            Screen targetScreen = Screen.AllScreens[displayIdx];
+
+            // Create and launch output window
+            _activeOutputWindow = new MultiCameraOutputWindow(selectedCameras, layoutMode);
+            _activeOutputWindow.WindowStartupLocation = WindowStartupLocation.Manual;
+            _activeOutputWindow.WindowState = WindowState.Normal;
+
+            _activeOutputWindow.Left = targetScreen.Bounds.Left;
+            _activeOutputWindow.Top = targetScreen.Bounds.Top;
+            _activeOutputWindow.Width = targetScreen.Bounds.Width;
+            _activeOutputWindow.Height = targetScreen.Bounds.Height;
+
+            // Handle window close
+            _activeOutputWindow.Closed += (s, closedArgs) =>
+            {
+                _activeOutputWindow = null;
+            };
+
+            _activeOutputWindow.Show();
+            _activeOutputWindow.WindowState = WindowState.Maximized;
+        }
+    }
+}

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "d2cZq4M7CGc=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\joe\\source\\repos\\StudioCameraViewer\\StudioCameraViewer\\StudioCameraViewer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\joe\\.nuget\\packages\\ndilibdotnetadvanced\\2026.8.5.1\\ndilibdotnetadvanced.2026.8.5.1.nupkg.sha512"
+  ],
+  "logs": []
+}
